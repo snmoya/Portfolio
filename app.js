@@ -1,11 +1,14 @@
-var PORT = process.env.PORT || 5000;
-var express = require('express');
-var app = express();
-var htpp = require('http');
-var server = http.server(app);
+//jshint esversion:6
 
-app.use(express.static('client'));
+const express = require("express");
+const bodyParser = require("body-parser");
 
-server.listen(PORT, function(){
-    console.log('Server running');
+const app = express();
+
+app.get("/", function(req, res){
+  res.send("Hello");
+});
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Server started on port 3000.");
 });
