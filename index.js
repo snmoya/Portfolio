@@ -10,12 +10,3 @@ navLinks.forEach(link => {
         document.body.classList.remove('nav_open');
     });
 });
-
-
-/* server */
-
-const app = express();
-
-app.listen(process.env.PORT || 30000, function() {
-    console.log("Server is running on port 3000")
-});
