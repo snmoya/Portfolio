@@ -2,47 +2,45 @@ import React from "react";
 
 function App() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen font-sans">
+    <div className="bg-black text-white min-h-screen font-sans">
       {/* Navigation Bar */}
-      <nav className="flex justify-center items-center py-6 border-b border-gray-800">
-        <ul className="flex space-x-12 text-lg font-medium">
-          {["HOME", "ABOUT", "PROJECTS", "CONTACT"].map((item) => (
-            <li key={item} className="group relative cursor-pointer">
-              <span className="group-hover:text-green-400 transition duration-300">
-                {item}
-              </span>
-              <div className="absolute left-0 w-0 group-hover:w-full h-0.5 bg-green-400 transition-all duration-300"></div>
-            </li>
-          ))}
+      <nav className="flex justify-between items-center px-8 py-4">
+        <h1 className="text-2xl font-bold">My Portfolio</h1>
+        <ul className="flex space-x-8">
+          <li className="hover:text-green-400 cursor-pointer">HOME</li>
+          <li className="hover:text-green-400 cursor-pointer">ABOUT</li>
+          <li className="hover:text-green-400 cursor-pointer">WORKS</li>
+          <li className="hover:text-green-400 cursor-pointer">CONTACT</li>
         </ul>
       </nav>
 
       {/* Hero Section */}
-      <header className="relative bg-gradient-to-r from-gray-800 via-black to-gray-800 py-16 px-8 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-center">
+      <div className="flex flex-col md:flex-row items-center px-8 py-16">
         {/* Text Content */}
-        <div className="text-center md:text-left md:w-1/2">
-          <h1 className="text-6xl font-extrabold mb-4 leading-tight text-white">
-            Welcome to My Work
-          </h1>
-          <p className="text-2xl text-gray-400 mb-6">
-            Passionate Developer | Innovative Thinker
+        <div className="w-full md:w-1/2">
+          <h2 className="text-5xl md:text-6xl font-bold text-green-400 mb-4">
+            Welcome to My Work:
+          </h2>
+          <p className="text-3xl md:text-4xl font-light mb-4">
+          Passionate Developer | Innovative Thinker
           </p>
-          <button className="bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-2 rounded-lg transition">
-            See My Work
-          </button>
+          <p className="text-lg text-gray-400">
+            My name is Sebastian Moya, Computer Science graduate.
+          </p>
+          <p className="text-lg text-gray-400">
+            I am passionate about front-end and mobile development.
+          </p>
         </div>
 
-        {/* Image */}
-        <div className="relative mt-8 md:mt-0 md:ml-8">
-          <div className="w-64 h-64 md:w-72 md:h-72 rounded-full border-8 border-green-400 overflow-hidden shadow-2xl">
-            <img
-              src="/assets/my_photo.jpg" /* Replace with your image */
-              alt="Your Profile"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        {/* Profile Image */}
+        <div className="w-full md:w-1/2 mt-8 md:mt-0 flex justify-center">
+          <img
+            src="/assets/my_photo.jpg" /* Replace with your photo */
+            alt="My Profile"
+            className="w-64 h-64 rounded-full object-cover border-4 border-green-400"
+          />
         </div>
-      </header>
+      </div>
 
       {/* Separator */}
       <div className="py-2">
@@ -55,7 +53,7 @@ function App() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Project Cards */}
-          {Array.from({ length: 6 }).map((_, index) => (
+          {Array.from({ length: 3 }).map((_, index) => (
             <div
               key={index}
               className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2"
